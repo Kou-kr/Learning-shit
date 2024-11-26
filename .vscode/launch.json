@@ -1,41 +1,54 @@
 {
-
-    "version": "0.2.0",
     "configurations": [
         {
-            "type": "firefox",
+            "type": "pwa-msedge",
+            "name": "Launch Microsoft Edge",
             "request": "launch",
-            "reAttach": true,
-            "name": "Launch add-on",
-            "addonPath": "${workspaceFolder}"
-        },
-
-        {
-            "name": "Launch index.html",
-            "type": "firefox",
-            "request": "launch",
-            "reAttach": true,
-            "file": "${workspaceFolder}/Superstition, its history and why they are belived.html"
+            "runtimeArgs": [
+                "--remote-debugging-port=9222"
+            ],
+            "url": "c:\\Users\\Subrat Subedi\\.vscode\\extensions\\ms-edgedevtools.vscode-edge-devtools-2.1.6\\out\\startpage\\index.html",
+            "presentation": {
+                "hidden": true
+            }
         },
         {
-            "name": "Launch localhost",
-            "type": "firefox",
+            "type": "pwa-msedge",
+            "name": "Launch Microsoft Edge in headless mode",
             "request": "launch",
-            "reAttach": true,
-            "url": "Superstition, its history and why they are belived.html",
-            "webRoot": "${workspaceFolder}"
+            "runtimeArgs": [
+                "--headless",
+                "--remote-debugging-port=9222"
+            ],
+            "url": "c:\\Users\\Subrat Subedi\\.vscode\\extensions\\ms-edgedevtools.vscode-edge-devtools-2.1.6\\out\\startpage\\index.html",
+            "presentation": {
+                "hidden": true
+            }
         },
         {
-            "name": "Attach",
-            "type": "firefox",
-            "request": "attach"
+            "type": "vscode-edge-devtools.debug",
+            "name": "Open Edge DevTools",
+            "request": "attach",
+            "url": "c:\\Users\\Subrat Subedi\\.vscode\\extensions\\ms-edgedevtools.vscode-edge-devtools-2.1.6\\out\\startpage\\index.html",
+            "presentation": {
+                "hidden": true
+            }
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Launch Edge Headless and attach DevTools",
+            "configurations": [
+                "Launch Microsoft Edge in headless mode",
+                "Open Edge DevTools"
+            ]
         },
         {
-            "name": "Launch WebExtension",
-            "type": "firefox",
-            "request": "launch",
-            "reAttach": true,
-            "addonPath": "${workspaceFolder}"
+            "name": "Launch Edge and attach DevTools",
+            "configurations": [
+                "Launch Microsoft Edge",
+                "Open Edge DevTools"
+            ]
         }
     ]
 }
