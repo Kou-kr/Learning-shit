@@ -3,6 +3,14 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "name": "Launch add-on",
+            "addonPath": "${workspaceFolder}"
+        },
+
+        {
             "name": "Launch index.html",
             "type": "firefox",
             "request": "launch",
@@ -14,7 +22,7 @@
             "type": "firefox",
             "request": "launch",
             "reAttach": true,
-            "url": "http://localhost/index.html",
+            "url": "Superstition, its history and why they are belived.html",
             "webRoot": "${workspaceFolder}"
         },
         {
